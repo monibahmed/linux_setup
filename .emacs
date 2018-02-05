@@ -29,6 +29,10 @@
       (package-install package)))
       myPackages)
 
+(dolist (package '(use-package))
+   (unless (package-installed-p package)
+       (package-install package)))
+
 ;; Org-mode
 ;; -*- mode: elisp -*-
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
